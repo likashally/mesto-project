@@ -1,0 +1,19 @@
+.element__heart-btn {
+    width: 22px;
+    height: 19px;
+    background: #fff;
+    background-image: url("../../../images/heart.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: end;
+    align-self: center;
+    padding: 0;
+    margin-right: 21px;
+}
+
+.element__heart-btn:active {
+    background: #000;
+}

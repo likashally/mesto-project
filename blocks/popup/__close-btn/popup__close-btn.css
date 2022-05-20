@@ -1,0 +1,13 @@
+.popup__close-btn {
+    background-image: url("../../../images/cross.svg");
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 0;
+    margin-left: auto;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background-color: rgba(0 0 0 / 0);
+}

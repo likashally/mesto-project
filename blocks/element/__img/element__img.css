@@ -6,4 +6,6 @@
     border-top-right-radius: 10px;
     grid-column: 1/3;
     grid-row: 1/2;
+    width: 100%;
+    max-width: 282px;
 }

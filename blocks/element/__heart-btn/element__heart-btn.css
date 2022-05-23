@@ -12,6 +12,11 @@
     align-self: center;
     padding: 0;
     margin-right: 21px;
+    cursor: pointer;
+}
+
+.element__heart-btn:hover {
+    opacity: 0.5;
 }
 
 .element__heart-btn:active {

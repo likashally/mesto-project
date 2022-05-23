@@ -16,55 +16,55 @@
             <img src="images/image.jpg" alt="Фото Жак Ива Кусто" class="profile__avatar">
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <button class="profile__edit-btn button"></button>
+                <button type="button" class="profile__edit-btn button"></button>
                 <p class="profile__occupation">Исследователь океана</p>
             </div>
-            <button class="profile__add-btn button"></button>
+            <button type="button" class="profile__add-btn button"></button>
         </section>
         <section class="elements">
-            <div class="element">
+            <article class="element">
                 <img src="images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="element__img">
                 <h2 class="element__title">Карачаевск</h2>
-                <button class="element__heart-btn button"></button>
-            </div>
-            <div class="element">
+                <button type="button" class="element__heart-btn"></button>
+            </article>
+            <article class="element">
                 <img src="images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус" class="element__img">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__heart-btn button"></button>
-            </div>
-            <div class="element">
+                <button type="button" type="button" class="element__heart-btn"></button>
+            </article>
+            <article class="element">
                 <img src="images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай" class="element__img">
                 <h2 class="element__title">Домбай</h2>
-                <button class="element__heart-btn button"></button>
-            </div>
-            <div class="element">
+                <button type="button" class="element__heart-btn"></button>
+            </article>
+            <article class="element">
                 <img src="images/kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус" class="element__img">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__heart-btn button"></button>
-            </div>
-            <div class="element">
+                <button type="button" class="element__heart-btn"></button>
+            </article>
+            <article class="element">
                 <img src="images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай" class="element__img">
                 <h2 class="element__title">Домбай</h2>
-                <button class="element__heart-btn button"></button>
-            </div>
-            <div class="element">
+                <button type="button" class="element__heart-btn"></button>
+            </article>
+            <article class="element">
                 <img src="images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="element__img">
                 <h2 class="element__title">Карачаево-Черкесия</h2>
-                <button class="element__heart-btn button"></button>
-            </div>
+                <button type="button" class="element__heart-btn"></button>
+            </article>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__info">© 2022 Mesto Russia</p>
     </footer>
-    <div class="popup popup_opened">
+    <div class="popup">
         <div class="popup__container">
-            <button class="popup__close-btn button" type="button"></button>
-            <form class="popup__form" name="form-info">
+            <button type="button" class="popup__close-btn button" type="button"></button>
+            <form name="form-info" action="" method="post">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" class="popup__input" name="name" value="Жак-Ив Кусто" placeholder="Введите ваше имя" required>
-                <input type="text" class="popup__input" name="occupation" value="Исследователь океана" placeholder="О себе" required>
-                <button type="submit" class="popup__save-btn button">Сохранить</button>
+                <input type="text" class="popup__input" id="name" name="name" placeholder="Введите ваше имя" required>
+                <input type="text" class="popup__input" id="occupation" name="occupation" placeholder="О себе" required>
+                <button type="submit" class="popup__save-btn">Сохранить</button>
             </form>
         </div>
     </div>

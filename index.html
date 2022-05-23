@@ -9,15 +9,15 @@
 </head>
 <body class="page">
     <header class="header">
-        <img src="images/logo.svg" alt="Лого Mesto Russia" class="header__logo">
+        <img src="images/mesto-logo.svg" alt="Лого Mesto Russia" class="header__logo">
     </header>
     <main>
         <section class="profile">
             <img src="images/image.jpg" alt="Фото Жак Ива Кусто" class="profile__avatar">
             <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <h1 class="profile__name" id="profile__name">Жак-Ив Кусто</h1>
                 <button type="button" class="profile__edit-btn button"></button>
-                <p class="profile__occupation">Исследователь океана</p>
+                <p class="profile__occupation" id="profile__occupation">Исследователь океана</p>
             </div>
             <button type="button" class="profile__add-btn button"></button>
         </section>
@@ -57,13 +57,13 @@
     <footer class="footer">
         <p class="footer__info">© 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup_opened">
         <div class="popup__container">
             <button type="button" class="popup__close-btn button" type="button"></button>
             <form name="form-info" action="" method="post">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" class="popup__input" id="name" name="name" placeholder="Введите ваше имя" required>
-                <input type="text" class="popup__input" id="occupation" name="occupation" placeholder="О себе" required>
+                <input type="text" class="popup__input" id="profile__name" name="name" placeholder="Введите ваше имя" value="Жак-Ив Кусто" required>
+                <input type="text" class="popup__input" id="profile__occupation" name="occupation" placeholder="О себе" value="Исследователь океана" required>
                 <button type="submit" class="popup__save-btn">Сохранить</button>
             </form>
         </div>

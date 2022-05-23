@@ -6,9 +6,12 @@
     align-items: baseline;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
     .profile__info {
+
         margin-top: 26px;
-        margin-bottom: 36px;
+        margin-bottom: 33px;
+        column-gap: 10px;
+        row-gap: 7px;
     }
 }

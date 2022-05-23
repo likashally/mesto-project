@@ -6,6 +6,6 @@
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
-    background-color: #000;
-    margin: 0 auto;
+    background-color: #000; 
+    min-width: 320px;
 }

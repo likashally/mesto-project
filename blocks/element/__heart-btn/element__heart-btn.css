@@ -18,7 +18,3 @@
 .element__heart-btn:hover {
     opacity: 0.5;
 }
-
-.element__heart-btn:active {
-    background: #000;
-}

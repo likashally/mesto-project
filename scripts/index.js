@@ -32,11 +32,16 @@ const popup = document.querySelector('.popup');
 const form = document.querySelector('.card-popup');
 const buttonClose = document.querySelector('.popup__close-btn');
 const buttonClose2 = document.querySelector('.card-popup__close-btn');
+const buttonClose3 = document.querySelector('.image-popup__close-btn');
 const buttonCreate = document.querySelector('.card-popup__save-btn');
 const title = document.getElementById('input__title');
 const image = document.getElementById('input__link');
 const cardsContainer = document.querySelector('.elements');
 const elementTemplate = document.querySelector("#article").content;
+
+const imageFull = document.getElementById('image-popup');
+const popupImage = document.querySelector('.image-popup__img');
+const popupTitle = document.querySelector('.image-popup__title');
 
 
 document.getElementById('input__name').value = document.getElementById('profile__name').textContent;
@@ -47,6 +52,7 @@ buttonAdd.addEventListener('click', openForm);
 
 buttonClose.addEventListener('click', closePopup);
 buttonClose2.addEventListener('click', closeForm);
+buttonClose3.addEventListener('click', closeImage);
 
 popup.addEventListener('click', (event) => {
     if(event.target === event.currentTarget) {
@@ -57,6 +63,12 @@ popup.addEventListener('click', (event) => {
 form.addEventListener('click', (event) => {
     if(event.target === event.currentTarget) {
         closeForm();
+    }
+});
+
+imageFull.addEventListener('click', (event) => {
+    if(event.target === event.currentTarget) {
+        closeImage();
     }
 });
 
@@ -86,6 +98,18 @@ function openForm() {
     })
 }
 
+function openImage() {
+    imageFull.classList.add('image-popup_opened');
+    body.classList.add('ovh');
+
+    document.addEventListener('keyup', (event) => {
+        event.stopImmediatePropagation();
+        if (event.key === 'Escape') {
+            closeImage();
+        }
+    })
+}
+
 function closePopup() {
     popup.classList.remove('popup_opened');
     body.classList.remove('ovh');
@@ -98,19 +122,11 @@ function closeForm() {
     document.removeEventListener('keyup', () => {})
 }
 
-/*
-buttonCreate.addEventListener('click', function () {
-    const title = document.getElementById('input__title');
-    const image = document.getElementById('input__link');
-
-    addCard(title.value, image.value);
-
-
-    title.value = '';
-    image.value = '';
-});
-
-*/
+function closeImage() {
+    imageFull.classList.remove('image-popup_opened');
+    body.classList.remove('ovh');
+    document.removeEventListener('keyup', () => {})
+}
 
 // Находим форму в DOM
 
@@ -170,7 +186,7 @@ function createCardElement(name, link){
     const imageElement = element.querySelector(".element__img");
     imageElement.src = link;
     imageElement.alt = name;
-    imageElement.addEventListener("click", function(){collector(name, link)});
+    imageElement.addEventListener("click", function(){imageClickHandler(name, link)});
     element.querySelector(".element__title").textContent = name;
     element.querySelector(".element__heart-btn").addEventListener("click", likeToggle);
     element.querySelector(".element__trash").addEventListener("click", removeCard);
@@ -201,6 +217,15 @@ function likeToggle(evt) {
 
 function removeCard(evt){
     evt.target.closest(".element").remove();
+}
+
+
+
+function imageClickHandler(name, link){
+    popupImage.src = link;
+    popupImage.alt = name;
+    popupTitle.textContent = name;
+    openImage(imageFull);
 }
 
 loadElements(cardsContainer, initialCards); 

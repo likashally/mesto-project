@@ -1,19 +1,19 @@
 const popupCloseButton = document.querySelectorAll(".popup__close-btn");
 const profileEditButton = document.querySelector('.profile__edit-btn');
-const profilePopup = document.querySelector('#profile-popup');
-const cardPopup = document.querySelector('#card-popup');
+const profilePopup = document.querySelector('.popup_type_profile');
+const cardPopup = document.querySelector('.popup_type_card');
 const cardAddButton = document.querySelector('.profile__add-btn');
 const title = document.querySelector('#input__title');
 const image = document.querySelector('#input__link');
 const cardsContainer = document.querySelector('.elements');
 const elementTemplate = document.querySelector("#article").content;
+const profileName = document.querySelector('#profile__name');
+const profileOccupation = document.querySelector('#profile__occupation');
 
-const imageFull = document.querySelector('#image-popup');
+const imageFull = document.querySelector('.popup_type_image');
 const popupImage = document.querySelector('.popup__image');
 const popupTitle = document.querySelector('.popup__image-title');
 
-document.querySelector('#input__name').value = document.querySelector('#profile__name').textContent;
-document.querySelector('#input__occupation').value = document.querySelector('#profile__occupation').textContent;
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
@@ -30,7 +30,10 @@ function closeButtonAction(evt){
 }
 
 function editButtonAction(){
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileOccupation.textContent;
     openPopup(profilePopup);
+    
 }
 
 function addButtonAction() {
@@ -60,8 +63,8 @@ const jobInput = document.querySelector('#input__occupation');
 
     function formSubmitHandler (evt) {
         evt.preventDefault();
-        document.querySelector('#profile__name').textContent = nameInput.value;
-        document.querySelector('#profile__occupation').textContent = jobInput.value;
+        profileName.textContent = nameInput.value;
+        profileOccupation.textContent = jobInput.value;
         closePopup(profilePopup);
     }
 
@@ -69,11 +72,6 @@ const jobInput = document.querySelector('#input__occupation');
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);
 
-imageFull.addEventListener('click', (event) => {
-    if(event.target === event.currentTarget) {
-        closePopup(popup);
-    }
-});
 
 function createCardElement(name, link){
     const element = elementTemplate.querySelector(".element").cloneNode(true);
@@ -94,7 +92,7 @@ function prependCard(list, name, link){
 function submitForm(evt){
     evt.preventDefault();
     prependCard(cardsContainer, title.value, image.value);
-    closeForm(form);
+    closePopup(cardPopup);
     title.value = ""; 
     image.value = "";
 }

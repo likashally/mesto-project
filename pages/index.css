@@ -30,5 +30,7 @@
 @import url(../blocks/element/__heart-btn/element__heart-btn_active.css);
 @import url(../blocks/popup/__image-container/popup__image-container.css);
 @import url(../blocks/popup/__image/popup__image.css);
-@import url(../blocks/popup/_dark/popup_dark.css);
 @import url(../blocks/popup/__image-title/popup__image-title.css);
+@import url(../blocks/popup/_type/popup_type_image.css);
+@import url(../blocks/popup/_type/popup_type_card.css);
+@import url(../blocks/popup/_type/popup_type_profile.css);

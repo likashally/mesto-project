@@ -1,3 +1,4 @@
+const popup = document.querySelectorAll(".popup");
 const popupCloseButton = document.querySelectorAll(".popup__close-btn");
 const profileEditButton = document.querySelector('.profile__edit-btn');
 const profilePopup = document.querySelector('.popup_type_profile');
@@ -14,19 +15,50 @@ const imageFull = document.querySelector('.popup_type_image');
 const popupImage = document.querySelector('.popup__image');
 const popupTitle = document.querySelector('.popup__image-title');
 
+function escKeyHandler(evt) {
+    if (evt.key === 'Escape') {
+        closePopup(profilePopup);
+        closePopup(cardPopup);
+        closePopup(imageFull);
+    }
+}
+
+
+/*
+popup.forEach(closeEsc => closeEsc.addEventListener("keydown", escKeyHandler));
+
+function escKeyHandler(evt) {
+    if (evt.key === 'Escape') {
+        closePopup(evt.target.closest(".popup"));
+    }
+}
+
+*/
 
 function openPopup(popup) {
-    popup.classList.add('popup_opened');
+    popup.classList.add('popup_visible');
+    document.addEventListener('keyup', escKeyHandler);
 }
 
 function closePopup(popup) {
-    popup.classList.remove('popup_opened');
+    document.removeEventListener('keyup', escKeyHandler);
+    popup.classList.remove('popup_visible');
+
 }
+
 
 popupCloseButton.forEach(closeButton => closeButton.addEventListener("click", closeButtonAction));
 
 function closeButtonAction(evt){
     closePopup(evt.target.closest(".popup"));
+}
+
+popup.forEach(closeOverlay => closeOverlay.addEventListener("click", closeOverlayAction));
+
+function closeOverlayAction(evt){
+    if(evt.target === evt.currentTarget) {
+        closePopup(evt.target.closest(".popup"));
+    }
 }
 
 function editButtonAction(){
